@@ -96,6 +96,10 @@ function checkbet()
 		result.style.color = 'red';
 		result.innerText = "Укажите сумму ставки от 1 до 9999 рублей или шанс от 0.01 до 95";
 	}
+	else
+	{
+		result.innerText = "";
+	}
 }
 
 please.onclick = function(){
@@ -113,8 +117,9 @@ please.onclick = function(){
 btn_low.onclick = function(){
 	btn_low.disabled = true;
 	btn_high.disabled = true;
-	onClick().then(response => {if(bet.value == '' || chance.value == '' || chance.value == '0' || chance.value == '00' || chance.value == '000' || chance.value == '0000' || chance.value == '00000' || chance.value == '0.' || chance.value == '00.' || chance.value == '000.' || chance.value == '0000.' || bet.value == '0' || bet.value == '00' || bet.value == '000' || bet.value == '0000' || bet.value == '0.' || bet.value == '00.' || bet.value == '000.' || chance.value == '.' || bet.value == '.' || chance.value == '.0' || chance.value == '.00' || chance.value == '.000' || chance.value == '.0000' || chance.value == '0.000' || chance.value == '00.00' || chance.value == '000.0' || chance.value == '0.0' || chance.value == '0.00' || chance.value == '00.0' || bet.value < 1)
+	onClick().then(response => {if(bet.value == '' || chance.value == '' || chance.value == '0' || chance.value == '00' || chance.value == '000' || chance.value == '0000' || chance.value == '00000' || chance.value == '0.' || chance.value == '00.' || chance.value == '000.' || chance.value == '0000.' || bet.value == '0' || bet.value == '00' || bet.value == '000' || bet.value == '0000' || bet.value == '0.' || bet.value == '00.' || bet.value == '000.' || chance.value == '.' || bet.value == '.' || chance.value == '.0' || chance.value == '.00' || chance.value == '.000' || chance.value == '.0000' || chance.value == '0.000' || chance.value == '00.00' || chance.value == '000.0' || chance.value == '0.0' || chance.value == '0.00' || chance.value == '00.0' || bet.value < '1')
 	{
+		varifycation.style.display = 'none';
 		result.style.color = 'red';
 		result.innerText = "Укажите сумму ставки от 1 до 9999 рублей или шанс от 0.01 до 95";
 	}
@@ -163,10 +168,10 @@ btn_low.onclick = function(){
 				balance.innerText = "Баланс: " + nbalance.toFixed(2) + " uah";
 			}
 		}
+		varifycation.style.display = 'block';
 	}
 	btn_low.disabled = false;
-	btn_high.disabled = false;
-	varifycation.style.display = 'block';});
+	btn_high.disabled = false;});
 };
 
 btn_high.onclick = function(){
@@ -174,6 +179,7 @@ btn_high.onclick = function(){
 	btn_high.disabled = true;
 	onClick().then(response => {if(bet.value == '' || chance.value == '' || chance.value == '0' || chance.value == '00' || chance.value == '000' || chance.value == '0000' || chance.value == '00000' || chance.value == '0.' || chance.value == '00.' || chance.value == '000.' || chance.value == '0000.' || bet.value == '0' || bet.value == '00' || bet.value == '000' || bet.value == '0000' || bet.value == '0.' || bet.value == '00.' || bet.value == '000.' || chance.value == '.' || bet.value == '.' || chance.value == '.0' || chance.value == '.00' || chance.value == '.000' || chance.value == '.0000' || chance.value == '0.000' || chance.value == '00.00' || chance.value == '000.0' || chance.value == '0.0' || chance.value == '0.00' || chance.value == '00.0' || bet.value < 1)
 	{
+		varifycation.style.display = 'none';
 		result.style.color = 'red';
 		result.innerText = "Укажите сумму ставки от 1 до 9999 рублей или шанс от 0.01 до 95";
 	}
@@ -223,10 +229,10 @@ btn_high.onclick = function(){
 				balance.innerText = "Баланс: " + nbalance.toFixed(2) + " uah";
 			}
 		}
+		varifycation.style.display = 'block';
 	}
 	btn_low.disabled = false;
-	btn_high.disabled = false;
-	 varifycation.style.display = 'block';});
+	btn_high.disabled = false;});
 };
 
 function getRandomInt(min, max) {
