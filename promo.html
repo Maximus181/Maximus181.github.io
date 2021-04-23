@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="promo.css">
+	<title>Document</title>
+</head>
+<body>
+	<header class="header">
+		<a href="" class="header_name">Pulik.games</a>
+		<span class="promo"><a href="index.php">На главную</a></span>
+		<span class="balance" name="balance">0.00</span>
+		<span class="header_menu">
+			<ul class="header_ul">
+				<li class="header_list"><a href="log_out.php">Выход</a></li>
+			</ul>
+		</span>
+	</header>
+	<div class="content">
+		<div class="container">
+			<div class="pop_block"></div>
+			<div class="name">Промокод</div>
+			<div class="promo_block">
+				<div class="subname">Введите промокод в поле ниже</div>
+				<form id="myForm">
+				<div class="block_input">Вводите промо сюда: <input type="text" name="input_promo" class="promo_input" onkeyup="this.value = this.value.replace(/[^\d-]/g,'');" maxlength="14" placeholder="Введите промокод сюда">
+				</div>
+				<input type="submit" name="submit" value="Активировать" class="promo_btn">
+				</form>
+			</div>
+			<div class="create_promo">
+				<div class="title">Создание промокода</div>
+				<div class="subtitle">Что бы создать промокод заполните поля ниже</div>
+				<form id="mysecform">
+				<input type="text" name="name_promo" class="promo_name" placeholder="Промокод" pattern=".{14,14}" required title="14 characters" maxlength="14">
+				<input type="text" name="promo_value" class="promo_value" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" maxlength="4" placeholder="Сумма от 1 до 1000">
+				<input type="text" name="promo_active" class="promo_active" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" maxlength="2" placeholder="Активации от 1 до 10">
+				<input type="submit" name="submit" class="create_btn" value="Создать промокод">
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer class="footer"></footer>
+
+	<script src="promo.js"></script>
+</body>
+</html>
